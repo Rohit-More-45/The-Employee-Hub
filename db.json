@@ -1,0 +1,49 @@
+{
+  "employees": [
+    {
+      "id": "1",
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "john@example.com",
+      "department": "Engineering",
+      "role": "Developer",
+      "salary": 80000
+    },
+    {
+      "id": "2",
+      "firstName": "Jane",
+      "lastName": "Smith",
+      "email": "jane@example.com",
+      "department": "Marketing",
+      "role": "Manager",
+      "salary": 95000
+    },
+    {
+      "id": "819e",
+      "firstName": "Rohit",
+      "lastName": "More",
+      "email": "rohit@gmail.com",
+      "department": "Digital",
+      "role": "Software Developer",
+      "salary": 300000
+    },
+    {
+      "id": "1286",
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "john@example.com",
+      "department": "Engineering",
+      "role": "Developer",
+      "salary": 80000
+    },
+    {
+      "firstName": "Shubham",
+      "lastName": "More",
+      "email": "shubham@aress.com",
+      "department": "Digitall",
+      "role": "Software Engineer",
+      "salary": 30000,
+      "id": "0e39"
+    }
+  ]
+}

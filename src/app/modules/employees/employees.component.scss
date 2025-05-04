@@ -1,0 +1,187 @@
+.employees-container {
+    padding: 2rem;
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .employees-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .page-title {
+    color: #ffffff;
+    font-size: 1.8rem;
+    position: relative;
+    margin: 0;
+  }
+  
+  .page-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #7b68ee, #a78bfa);
+    border-radius: 3px;
+  }
+  
+  .add-btn {
+    background: linear-gradient(90deg, #7b68ee, #6a5acd);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(123, 104, 238, 0.4);
+  }
+  
+  .add-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(123, 104, 238, 0.5);
+  }
+  
+  .btn-icon {
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+  }
+  
+  .table-container {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    margin-bottom: 2rem;
+  }
+  
+  .employees-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    color: #ffffff;
+  }
+  
+  .employees-table thead tr {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  
+  .employees-table th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+  }
+  
+  .employees-table td {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .employee-row {
+    transition: background-color 0.3s ease;
+  }
+  
+  .employee-row:hover {
+    background-color: rgba(123, 104, 238, 0.1);
+  }
+  
+  .employee-name {
+    font-weight: 500;
+  }
+  
+  .employee-email {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .employee-actions {
+    text-align: right;
+  }
+  
+  .edit-btn {
+    background-color: rgba(123, 104, 238, 0.2);
+    color: #7b68ee;
+    border: 1px solid #7b68ee;
+    border-radius: 4px;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+  
+  .edit-btn:hover {
+    background-color: rgba(123, 104, 238, 0.3);
+    transform: translateY(-2px);
+  }
+  
+  .no-data {
+    text-align: center;
+    padding: 2rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-style: italic;
+  }
+  
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+  }
+  
+  .back-link:hover {
+    color: #7b68ee;
+    transform: translateX(-5px);
+  }
+  
+  .back-icon {
+    margin-right: 0.5rem;
+    font-size: 1.1rem;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .employees-container {
+      padding: 1rem;
+    }
+    
+    .employees-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    
+    .table-container {
+      overflow-x: auto;
+    }
+    
+    .employees-table th,
+    .employees-table td {
+      padding: 0.8rem;
+    }
+  }

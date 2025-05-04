@@ -1,0 +1,59 @@
+<div class="form-container">
+  <h3 class="form-title">Add New Employee</h3>
+
+  <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()" class="employee-form">
+    <div class="form-group">
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" formControlName="firstName" class="form-control">
+      @if (employeeForm.get('firstName')?.invalid && employeeForm.get('firstName')?.touched) {
+        <small class="error-message">First name is required.</small>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" formControlName="lastName" class="form-control">
+      @if(employeeForm.get('lastName')?.invalid && employeeForm.get('lastName')?.touched){
+        <small class="error-message">Last Name is required</small>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" formControlName="email" class="form-control">
+      @if (employeeForm.get('email')?.invalid && employeeForm.get('email')?.touched) {
+        <small class="error-message">Valid email is required.</small>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="department">Department:</label>
+      <input type="text" id="department" formControlName="department" class="form-control">
+      @if (employeeForm.get('department')?.invalid && employeeForm.get('department')?.touched) {
+        <small class="error-message">Department is required.</small>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="role">Role:</label>
+      <input type="text" id="role" formControlName="role" class="form-control">
+      @if (employeeForm.get('role')?.invalid && employeeForm.get('role')?.touched) {
+        <small class="error-message">Role is required.</small>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="salary">Salary:</label>
+      <input type="number" id="salary" formControlName="salary" class="form-control">
+      @if (employeeForm.get('salary')?.invalid && employeeForm.get('salary')?.touched) {
+        <small class="error-message">Salary must be 0 or higher.</small>
+      }
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" [disabled]="employeeForm.invalid" class="submit-btn">
+        <span class="btn-text">Add Employee</span>
+      </button>
+    </div>
+  </form>
+</div>

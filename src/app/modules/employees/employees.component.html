@@ -1,0 +1,41 @@
+<div class="employees-container">
+  <div class="employees-header">
+    <h2 class="page-title">Employee Directory</h2>
+    <a routerLink="/employee/new" class="add-btn">
+      <span class="btn-icon">+</span>
+      <span class="btn-text">Add Employee</span>
+    </a>
+  </div>
+
+  <div class="table-container">
+    <table class="employees-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for(employee of employees(); track employee.id) {
+          <tr class="employee-row">
+            <td class="employee-name">{{employee.firstName}} {{employee.lastName}}</td>
+            <td class="employee-email">{{employee.email}}</td>
+            <td class="employee-actions">
+              <a [routerLink]="['/employees/edit', employee.id]" class="edit-btn">Edit</a>
+            </td>
+          </tr>
+        }
+        @empty {
+          <tr>
+            <td colspan="3" class="no-data">No employees found</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <a routerLink="/dashboard" class="back-link">
+    <span class="back-icon">←</span> Back to Dashboard
+  </a>
+</div>

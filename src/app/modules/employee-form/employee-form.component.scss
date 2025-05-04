@@ -1,0 +1,180 @@
+.form-container {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    max-width: 700px;
+    margin: 2rem auto;
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .form-title {
+    color: #ffffff;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 2px solid rgba(123, 104, 238, 0.5);
+    position: relative;
+  }
+  
+  .form-title::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, #7b68ee, #a78bfa);
+  }
+  
+  .employee-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+    position: relative;
+  }
+  
+  .form-group label {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+  }
+  
+  .form-control {
+    background-color: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    padding: 0.8rem 1rem;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .form-control:focus {
+    outline: none;
+    border-color: #7b68ee;
+    box-shadow: 0 0 0 3px rgba(123, 104, 238, 0.25);
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .form-control:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .error-message {
+    color: #ff6b6b;
+    font-size: 0.8rem;
+    margin-top: 0.4rem;
+    animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+  }
+  
+  @keyframes shake {
+    10%, 90% { transform: translate3d(-1px, 0, 0); }
+    20%, 80% { transform: translate3d(2px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-3px, 0, 0); }
+    40%, 60% { transform: translate3d(3px, 0, 0); }
+  }
+  
+  .form-actions {
+    grid-column: 1 / -1;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .submit-btn {
+    background: linear-gradient(90deg, #7b68ee, #6a5acd);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(123, 104, 238, 0.4);
+  }
+  
+  .submit-btn:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(123, 104, 238, 0.5);
+  }
+  
+  .submit-btn:active:not(:disabled) {
+    transform: translateY(-1px);
+  }
+  
+  .submit-btn:disabled {
+    background: linear-gradient(90deg, #4a4a6a, #3a3a5a);
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+  
+  .submit-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.7s ease;
+  }
+  
+  .submit-btn:hover:not(:disabled)::before {
+    left: 100%;
+  }
+  
+  .btn-text {
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .form-container {
+      padding: 1.5rem;
+      margin: 1rem;
+    }
+    
+    .employee-form {
+      grid-template-columns: 1fr;
+    }
+    
+    .form-title {
+      font-size: 1.5rem;
+    }
+  }
+  
+  /* Custom input focus styles */
+  .form-control:focus + label {
+    color: #7b68ee;
+  }
+  
+  /* Add a subtle floating effect to the form container */
+  .form-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s ease;
+  }
