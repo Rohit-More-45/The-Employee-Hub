@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "employee hub": {
+    "employeehub": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/employee hub",
+            "outputPath": "dist/employeehub",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -70,10 +70,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "employee hub:build:production"
+              "buildTarget": "employeehub:build:production"
             },
             "development": {
-              "buildTarget": "employee hub:build:development"
+              "buildTarget": "employeehub:build:development"
             }
           },
           "defaultConfiguration": "development"

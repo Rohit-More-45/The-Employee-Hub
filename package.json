@@ -1,5 +1,5 @@
 {
-  "name": "employee hub",
+  "name": "employeehub",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:employee hub": "node dist/employee hub/server/server.mjs",
+    "serve:ssr:employeehub": "node dist/employeehub/server/server.mjs",
     "server": "json-server --watch db.json --port 3000"
   },
   "private": true,

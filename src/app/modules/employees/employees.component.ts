@@ -15,9 +15,11 @@ export class EmployeesComponent {
 
   employees = signal<Employee[]>([]);
 
-  constructor(){};
+  constructor(){
+  this.loadEmployees()
+  };
 
-  ngOnInit(){
+  loadEmployees(){
     this.employeeService.getEmployees().subscribe(data=>{
       this.employees.set(data);
     })
