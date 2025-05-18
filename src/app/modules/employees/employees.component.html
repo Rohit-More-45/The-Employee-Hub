@@ -17,12 +17,13 @@
         </tr>
       </thead>
       <tbody>
-        @for(employee of employees(); track employee.id) {
+        @for(employee of employeeService.employees(); track employee.id) {
           <tr class="employee-row">
             <td class="employee-name">{{employee.firstName}} {{employee.lastName}}</td>
             <td class="employee-email">{{employee.email}}</td>
             <td class="employee-actions">
               <a [routerLink]="['/employees/edit', employee.id]" class="edit-btn">Edit</a>
+              <a class="edit-btn" (click)="deleteEmployee(employee)">Delete</a>
             </td>
           </tr>
         }

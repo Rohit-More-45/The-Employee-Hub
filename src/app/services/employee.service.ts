@@ -8,16 +8,18 @@ import { Employee } from '../models/employee.model';
 })
 export class EmployeeService {
   private apiUrl = 'http://localhost:3000/employees';
+ 
 
   constructor(private http: HttpClient) {}
   private employeesSignal = signal<Employee[]>([]);
+   public employees = signal<Employee[]>([]);
   // Get all employees
   getEmployees(): Observable<Employee[]> {
     return this.http.get<Employee[]>(this.apiUrl);
   }
 
   // Get single employee by ID
-  getEmployee(id: string): Observable<Employee> {
+  getEmployee(id: number): Observable<Employee> {
     return this.http.get<Employee>(`${this.apiUrl}/${id}`);
   }
 
@@ -61,4 +63,11 @@ export class EmployeeService {
   deleteEmployee(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
+
+  loadEmployees() {
+  this.getEmployees().subscribe(data => {
+    // This updates internal state
+    this.employees.set(data);
+  });
+}
 }

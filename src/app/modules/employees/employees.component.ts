@@ -11,19 +11,14 @@ import { Employee } from '../../models/employee.model';
 })
 export class EmployeesComponent {
 
-  private employeeService = inject(EmployeeService);
+  constructor(public employeeService: EmployeeService) {}
 
-  employees = signal<Employee[]>([]);
-
-  constructor(){
-  this.loadEmployees()
-  };
-
-  loadEmployees(){
-    this.employeeService.getEmployees().subscribe(data=>{
-      this.employees.set(data);
-    })
+  ngOnInit() {
+    this.employeeService.loadEmployees();
   }
 
+  deleteEmployee(employee : Employee){
+    
+  }
 
 }

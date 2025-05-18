@@ -38,7 +38,6 @@ export class EmployeeFormComponent {
       const id = params['id'];
 
       if(id){
-        debugger;
         this.isEditMode = true;
         this.employeeId = id;
         // Fetch employee and patch form
